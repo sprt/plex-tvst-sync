@@ -142,10 +142,10 @@ def main():
                 if (plex_season_no == tvst_season_no and
                         plex_episode_no == tvst_episode_no):  # same episode
                     if tvst_watched and not plex_watched:
-                        # checkin_plex_episode(plex_episode)
+                        checkin_plex_episode(plex_episode)
                         print 'Checked in on Plex'
                     elif plex_watched and not tvst_watched:
-                        # checkin_tvst_episode(tvst_episode['id'])
+                        checkin_tvst_episode(tvst_episode['id'])
                         print 'Checked in on TVST'
         
         print
