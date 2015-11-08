@@ -80,13 +80,7 @@ def get_tvst_library():
 def get_tvst_show(show_id):
     params = {'show_id': show_id, 'include_episodes': '1'}
     r = tvst_request('GET', 'show', params=params)
-    
-    try:
-        return r['show']
-    except KeyError:
-        print show_id
-        print r
-        raise
+    return r['show']
 
 
 def search_plex_show(name):
