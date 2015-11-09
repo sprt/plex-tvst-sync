@@ -99,8 +99,7 @@ def checkin_plex_episode(episode):
 
 def checkin_tvst_episode(episode_id):
     data = {'episode_id': episode_id}
-    r = tvst_request('POST', 'checkin', data=data)
-    print r
+    tvst_request('POST', 'checkin', data=data)
 
 
 def main():
