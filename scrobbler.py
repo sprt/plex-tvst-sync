@@ -1,4 +1,3 @@
-from pprint import pprint
 import shelve
 import time
 import sys

@@ -3,7 +3,6 @@ ez_setup.use_setuptools()
 
 from distutils.command.install import install
 from setuptools import setup
-from setuptools import Command
 
 
 class CustomInstall(install):
