@@ -52,7 +52,7 @@ def run_tvst_oauth_flow():
         return r
     
     device_info = request_device_info()
-    print 'Code:', device_info
+    print 'Code:', device_info['device_code']
     print device_info['verification_url']
     
     while True:
