@@ -1,14 +1,25 @@
+import errno
+import os
 import shelve
 import time
 import sys
 
+import appdirs
 from plexapi.server import PlexServer
 import requests
 
 TVST_CLIENT_ID = 'DksvfcwLfe6tk7-K-bAf'
 TVST_CLIENT_SECRET = 'BLAtFZJqah5lqrQZSlLLDHGpff5rJw2xa_iDyR9N'
 
-_db = shelve.open('.db')
+_dirs = appdirs.AppDirs('plex-tvst-sync')
+
+try:
+    os.makedirs(_dirs.user_cache_dir)
+except OSError, e:
+    if e.errno != errno.EEXIST:
+        raise
+
+_db = shelve.open(os.path.join(_dirs.user_cache_dir, 'db'))
 _plex_server = PlexServer()
 
 

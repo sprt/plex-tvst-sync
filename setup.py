@@ -30,6 +30,7 @@ setup(
         'python-crontab==1.9.3',
     ],
     install_requires=[
+        'appdirs==1.4.0',
         'PlexAPI==1.1.0',
         'python-crontab==1.9.3',
         'requests==2.8.1',
