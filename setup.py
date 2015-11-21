@@ -25,6 +25,14 @@ setup(
     author='sprt',
     author_email='hellosprt@gmail.com',
     url='https://github.com/sprt/plex-tvst-sync',
+    keywords='plex tvshowtime scrobbler sync',
+    classifiers=[
+        'Environment :: Console',
+        'Intended Audience :: End Users/Desktop',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: Unix',
+        'Programming Language :: Python :: 2 :: Only',
+    ],
     cmdclass={'install': CustomInstall},
     setup_requires=[
         'python-crontab==1.9.3',
