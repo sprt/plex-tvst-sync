@@ -1,8 +1,9 @@
-import ez_setup
-ez_setup.use_setuptools()
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 from distutils.command.install import install
-from setuptools import setup
 
 
 class CustomInstall(install):
