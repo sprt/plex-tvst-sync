@@ -21,12 +21,13 @@ class CustomInstall(install):
 
 setup(
     name='plex-tvst-sync',
-    version='0.1.0',
+    version='1.0b',
     author='sprt',
     author_email='hellosprt@gmail.com',
     url='https://github.com/sprt/plex-tvst-sync',
     keywords='plex tvshowtime scrobbler sync',
     classifiers=[
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: MIT License',
