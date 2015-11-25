@@ -22,7 +22,7 @@ class CustomInstall(install):
 
 setup(
     name='plex-tvst-sync',
-    version='1.0b2',
+    version='1.0b3',
     author='sprt',
     author_email='hellosprt@gmail.com',
     url='https://github.com/sprt/plex-tvst-sync',
