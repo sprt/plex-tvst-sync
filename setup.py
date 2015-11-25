@@ -36,6 +36,7 @@ setup(
         'Programming Language :: Python :: 2 :: Only',
     ],
     cmdclass={'install': CustomInstall},
+    py_modules=['scrobbler'],
     setup_requires=[
         'python-crontab==1.9.3',
     ],
