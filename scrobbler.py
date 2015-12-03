@@ -24,6 +24,11 @@ _plex_server = PlexServer()
 
 
 def tvst_request(method, endpoint, **kwargs):
+    """
+    :type method: str
+    :type endpoint: str
+    :rtype: dict
+    """
     time.sleep(6)  # lazy man's rate-limiting
     
     if not endpoint.startswith('oauth/'):
@@ -66,6 +71,9 @@ def run_tvst_oauth_flow():
 
 
 def get_tvst_library():
+    """
+    :rtype: List[Dict]
+    """
     shows = []
     current_page = 0
     limit = 100
@@ -88,12 +96,20 @@ def get_tvst_library():
 
 
 def get_tvst_show(show_id):
+    """
+    :type show_id: str
+    :rtype: dict
+    """
     params = {'show_id': show_id, 'include_episodes': '1'}
     r = tvst_request('GET', 'show', params=params)
     return r['show']
 
 
 def search_plex_show(name):
+    """
+    :type name: str
+    :rtype: plexapi.video.Show
+    """
     matching_shows = _plex_server.library.search(name, vtype='show')
     
     for show in matching_shows:
@@ -104,10 +120,16 @@ def search_plex_show(name):
 
 
 def checkin_plex_episode(episode):
+    """
+    :type episode: plexapi.video.Episode
+    """
     episode.markWatched()
 
 
 def checkin_tvst_episode(episode_id):
+    """
+    :type episode_id: str
+    """
     data = {'episode_id': episode_id}
     tvst_request('POST', 'checkin', data=data)
 
