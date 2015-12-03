@@ -3,23 +3,6 @@ try:
 except ImportError:
     from distutils.core import setup
 
-from distutils.command.install import install
-
-
-class CustomInstall(install):
-    def _setup_cron(self):
-        import crontab
-        
-        cron = crontab.CronTab(user=True)
-        job = cron.new(command='plex-tvst-sync')
-        job.setall('@hourly')
-        cron.write_to_user(user=True)
-    
-    def run(self):
-        install.run(self)
-        self._setup_cron()
-
-
 setup(
     name='plex-tvst-sync',
     version='1.0b3',
@@ -35,7 +18,6 @@ setup(
         'Operating System :: Unix',
         'Programming Language :: Python :: 2 :: Only',
     ],
-    cmdclass={'install': CustomInstall},
     py_modules=['scrobbler'],
     setup_requires=[
         'python-crontab==1.9.3',
